@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {{ $title := site.Title }}
-    {{ if not .IsHome }}
-      {{ $title = printf "%s | %s" .Title site.Title }}
-    {{ end }}
+    {{ $title := site.Title }} {{ if not .IsHome }} {{ $title = printf "%s | %s"
+    .Title site.Title }} {{ end }}
     <title>{{ $title }}</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -12,41 +10,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/main.css" />
     <script src="/js/vis_utilities.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/submit_death.js"></script>
   </head>
   <body>
     <header class="page-header">
-        <nav>
-            <ul class="player-menu">
-                <li class="menu-heading">
-                    <h3>Players</h3>
-                </li>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/anicetnetennaba">A Nice Tnetennba</a>
-                </li>
-                <li>
-                    <a href="/boulderman94">Boulderman69</a>
-                </li>
-                <li><a href="/ham08">Pum08</a></li>
-                <li>
-                    <a href="/jellybeanandgone">JellyBeanAndGone</a>
-                </li>
-                <li>
-                    <a href="/n00dlesu">N00dleSu</a>
-                </li>
-                <li>
-                    <a href="/rakdoz">Rakdoz</a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="player-menu">
+          <li class="menu-heading">
+            <h3>Players</h3>
+          </li>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/anicetnetennaba">A Nice Tnetennba</a>
+          </li>
+          <li>
+            <a href="/boulderman94">Boulderman69</a>
+          </li>
+          <li><a href="/ham08">Pum08</a></li>
+          <li>
+            <a href="/jellybeanandgone">JellyBeanAndGone</a>
+          </li>
+          <li>
+            <a href="/n00dlesu">N00dleSu</a>
+          </li>
+          <li>
+            <a href="/rakdoz">Rakdoz</a>
+          </li>
+        </ul>
+        <a id="submit-death-button" class="button submit-death" href="#" data-modal-trigger aria-controls="submit-death-modal" aria-expanded="false">Submit Death</a>
+      </nav>
     </header>
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
-    <template>
-
-    </template>
+    <main>{{ block "main" . }}{{ end }}</main>
+    <section class="modal" id="submit-death-modal" data-modal-target>
+        <div class="modal__overlay" data-modal-close tabindex="-1"></div>
+        <div class="modal__wrapper">
+        <div class="modal__header">
+            <div class="modal__title">Submit Death</div>
+            <button
+            class="modal__close"
+            data-modal-close
+            aria-label="Close Modal"
+            ></button>
+        </div>
+        <div class="modal__content">
+            <p>
+                <form id="submit-death-form" class="form submit-death">
+                    <ul class="flex-outer">
+                        <li>
+                            <label for="name">Name</label>
+                            <select id="name" name="name">
+                                <option value="A Nice Tnetennba">A Nice Tnetennba</option>
+                                <option value="Boulderman94">Boulderman69</option>
+                                <option value="Ham08">Pum08</option>
+                                <option value="JellyBeanAndGone">JellyBeanAndGone</option>
+                                <option value="N00dlesu">N00dleSu</option>
+                                <option value="Rakdoz">Rakdoz</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="location">Location</label>
+                            <select id="location" name="location">
+                                <option value="Boney Burbs">Boney Burbs</option>
+                                <option value="Colossal Crops">Colossal Crops</option>
+                                <option value="Catty Corner">Catty Corner</option>
+                                <option value="Coral Castle">Coral Castle</option>
+                                <option value="Craggy Cliffs">Craggy Cliffs</option>
+                                <option value="Dirty Docks">Dirty Docks</option>
+                                <option value="Holly Hedges">Holly Hedges</option>
+                                <option value="Lazy Lake">Lazy Lake</option>
+                                <option value="Misty Meadows">Misty Meadows</option>
+                                <option value="Pleasant Park">Pleasant Park</option>
+                                <option value="Retail Row">Retail Row</option>
+                                <option value="Slurpy Swamp">Slurpy Swamp</option>
+                                <option value="Stealthy Stronghold">Stealthy Stronghold</option>
+                                <option value="Steamy Stacks">Steamy Stacks</option>
+                                <option value="Sweaty Sands">Sweaty Sands</option>
+                                <option value="The Spire">The Spire</option>
+                                <option value="Weeping Woods">Weeping Woods</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="gotout">Got Out?</label>
+                            <input type="checkbox" id="gotout" name="gotout" checked="checked"></input>                            
+                        </li>
+                        <li>
+                            <label for="weaponname">Weapon Name</label>
+                            <select id="weaponname" name="weaponname">
+                                <option value="AR">AR</option>
+                                <option value="Bow">Bow</option>
+                                <option value="Car">Car</option>
+                                <option value="Explosives">Explosives</option>
+                                <option value="Fall">Fall</option>
+                                <option value="Guardian">Guardian</option>
+                                <option value="Harpoon">Harpoon</option>
+                                <option value="Own">Own</option>
+                                <option value="Pickaxe">Pickaxe</option>
+                                <option value="Pistol">Pickaxe</option>
+                                <option value="RPG">RPG</option>
+                                <option value="Revolver">Revolver</option>
+                                <option value="SMG">SMG</option>
+                                <option value="Shotgun">Shotgun</option>
+                                <option value="Storm">Storm</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="weaponcolor">Weapon Color</label>
+                            <select id="weaponcolor" name="weaponcolor">
+                                <option value="White">White</option>
+                                <option value="Green">Green</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Mythic">Mythic</option>
+                                <option value="Exotic">Exotic</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="weapontype">Weapon Type</label>
+                            <select id="weapontype" name="weapontype">
+                                <option value="MS">Makeshift</option>
+                                <option value="Mech">Mechanical</option>
+                                <option value="Primal">Primal</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="typeofbow">Type of Bow</label>
+                            <select id="typeofbow" name="typeofbow">
+                                <option value="NT">N/A</option>
+                                <option value="Explosive">Explosive Bow</option>
+                                <option value="Flame">Flame Bow</option>
+                                <option value="Stink">Stink Bow</option>
+                                <option value="Shockwave">Shockwave Bow</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date"></input>
+                        </li>
+                    </ul>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="hidden" id="death-form-result"></div>
+            </p>
+            <br/>
+            <p>
+                <a class="button cancel" href="#" data-modal-close>Close</a>
+            </p>
+        </div>
+        </div>
+    </section>
   </body>
 </html>
