@@ -237,6 +237,8 @@ body {
 }
 
 .form.submit-death input[type='checkbox'] {
+  -moz-appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
   appearance: checkbox !important;
   width: 20px;
   height: 20px;
