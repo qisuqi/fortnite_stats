@@ -1,0 +1,16 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+"description": "A simple bar chart with embedded data.",
+"title": "Total Deaths Count - N00dleSu",
+"width": 1000, "height": 700,
+"data": {"url": "/fortnite_stats.github.io/data/data.json"},
+"mark": "bar",
+"transform": [
+    {"filter": "datum.Name == 'N00dleSu'"}
+],
+"encoding": {
+  "x": {"field": "Weapons", "type": "ordinal"},
+  "y": {"aggregate": "count", "title": "Deaths"},
+  "tooltip": {"aggregate": "count"},
+  "color": {"value": "#ff9900"}
+}}
