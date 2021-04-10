@@ -15,29 +15,17 @@ draft: false
     <section class="grid">
     <article>
         <div id="rakdoz">
-        <script>
-            var spec = '/data/rakdoz.aa.json';
-            vegaEmbed('#rakdoz', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('rakdoz.aa.json', 'rakdoz', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="rakdoz1">
-        <script>
-            var spec = '/data/rakdoz_pie.aa.json';
-            vegaEmbed('#rakdoz1', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('rakdoz_pie.aa.json', 'rakdoz1', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="rakdoz2">
-        <script>
-            var spec = '/data/rakdoz_pie1.aa.json';
-            vegaEmbed('#rakdoz2', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('rakdoz_pie1.aa.json', 'rakdoz2', 500, undefined);</script>
         </div>
     </article>
     </section>

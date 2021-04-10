@@ -15,29 +15,17 @@ draft: false
     <section class="grid">
     <article>
         <div id="anicet">
-        <script>
-            var spec = '/data/anicetnetennaba.aa.json';
-            vegaEmbed('#anicet', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('anicetnetennaba.aa.json', 'anicet', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="anicet1">
-        <script>
-            var spec = '/data/anicetnetennaba_pie.aa.json';
-            vegaEmbed('#anicet1', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('anicetnetennaba_pie.aa.json', 'anicet1', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="anicet2">
-        <script>
-            var spec = '/data/anicetnetennaba_pie1.aa.json';
-            vegaEmbed('#anicet2', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('anicetnetennaba_pie1.aa.json', 'anicet2', 500, undefined);</script>
         </div>
     </article>
     </section>

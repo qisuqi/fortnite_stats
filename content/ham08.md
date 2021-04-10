@@ -15,29 +15,17 @@ draft: false
     <section class="grid">
     <article>
         <div id="ham">
-        <script>
-            var spec = '/data/ham08.aa.json';
-            vegaEmbed('#ham', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('ham08.aa.json', 'ham', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="ham1">
-        <script>
-            var spec = '/data/ham08_pie.aa.json';
-            vegaEmbed('#ham1', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('ham08_pie.aa.json', 'ham1', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="ham2">
-        <script>
-            var spec = '/data/ham08_pie1.aa.json';
-            vegaEmbed('#ham2', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('ham08_pie1.aa.json', 'ham2', 500, undefined);</script>
         </div>
     </article>
     </section>

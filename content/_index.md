@@ -15,92 +15,52 @@ draft: false
     <section class="grid">
     <article>
         <div id="vis">
-        <script>
-            var spec = '/data/totaldeaths.aa.json';
-            vegaEmbed('#vis', spec, {"height": 500, "width":1300}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('totaldeaths.aa.json', 'vis', 500, 1300);</script>
         </div>
     </article>
     <article>
         <div id="pie">
-        <script>
-            var spec = '/data/pie.aa.json';
-            vegaEmbed('#pie', spec, {"height": 500, "width": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('pie.aa.json', 'pie', 500, 500);</script>
         </div>
     </article>
     <article>
         <div id="vis1">
-        <script>
-            var spec = '/data/total_weaponname.aa.json';
-            vegaEmbed('#vis1', spec, {"height": 500, "width": 400}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('total_weaponname.aa.json', 'vis1', 500, 400);</script>
         </div>
     </article>
     <article>
         <div id="pie1">
-        <script>
-            var spec = '/data/pie1.aa.json';
-            vegaEmbed('#pie1', spec, {"height": 500, "width": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('pie1.aa.json', 'pie1', 500, 500);</script>
         </div>
     </article>
     <article>
         <div id="vis2">
-        <script>
-            var spec = '/data/total_weaponcolor.aa.json';
-            vegaEmbed('#vis2', spec, {"height": 500, "width": 400}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('total_weaponcolor.aa.json', 'vis2', 500, 400);</script>
         </div>
     </article>
     <article>
         <div id="pie2">
-        <script>
-            var spec = '/data/pie2.aa.json';
-            vegaEmbed('#pie2', spec, {"height": 500, "width": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('pie2.aa.json', 'pie2', 500, 500);</script>
         </div>
     </article>
     <article>
         <div id="vis3">
-        <script>
-            var spec = '/data/total_weapontype.aa.json';
-            vegaEmbed('#vis3', spec, {"height": 500, "width": 400}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('total_weapontype.aa.json', 'vis3', 500, 400);</script>
         </div>
     </article>
     <article>
         <div id="vis4">
-        <script>
-            var spec = '/data/location.aa.json';
-            vegaEmbed('#vis4', spec, {"height": 500, "width": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('location.aa.json', 'vis4', 500, 500);</script>
         </div>
     </article>
     <article>
         <div id="vis5">
-        <script>
-            var spec = '/data/locationbar.aa.json';
-            vegaEmbed('#vis5', spec, {"height": 500, "width":400}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('locationbar.aa.json', 'vis5', 500, 400);</script>
         </div>
     </article>
     <article>
         <div id="vis6">
-        <script>
-            var spec = '/data/timeline.aa.json';
-            vegaEmbed('#vis6', spec, {"height": 500, "width":1300}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('timeline.aa.json', 'vis6', 500, 1300);</script>
         </div>
     </article>
     </section>

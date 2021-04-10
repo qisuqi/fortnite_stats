@@ -15,29 +15,17 @@ draft: false
     <section class="grid">
     <article>
         <div id="noodlesu">
-        <script>
-            var spec = '/data/n00dlesu.aa.json';
-            vegaEmbed('#noodlesu', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('n00dlesu.aa.json', 'noodlesu', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="noodlesu1">
-        <script>
-            var spec = '/data/n00dlesu_pie.aa.json';
-            vegaEmbed('#noodlesu1', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('n00dlesu_pie.aa.json', 'noodlesu1', 500, undefined);</script>
         </div>
     </article>
     <article>
         <div id="noodlesu2">
-        <script>
-            var spec = '/data/n00dlesu_pie1.aa.json';
-            vegaEmbed('#noodlesu2', spec, {"height": 500}).then(function(result) {
-            }).catch(console.error);
-        </script>
+            <script>renderSpec('n00dlesu_pie1.aa.json', 'noodlesu2', 500, undefined);</script>
         </div>
     </article>
     </section>
