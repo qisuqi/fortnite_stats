@@ -1,0 +1,7 @@
+{
+    "name": "fortnitedeathstats",
+    "private": "true",
+    "dependencies": {
+      "faunadb": "^4.1.3"
+    }
+  }
