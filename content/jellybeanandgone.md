@@ -1,0 +1,45 @@
+---
+title: "jellybeanandgone"
+date: 2021-04-10T15:48:48+01:00
+draft: false
+---
+
+<section class="page-content">
+    <section class="search">
+    <form>
+        <input type="search" placeholder="Search...">
+        <button type="submit" aria-lable="submit form">
+        </button>
+    </form>
+    </section>
+    <section class="grid">
+    <article>
+        <div id="jellybean">
+        <script>
+            var spec = '/data/jellybeanandgone.aa.json';
+            vegaEmbed('#jellybean', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    <article>
+        <div id="jellybean1">
+        <script>
+            var spec = '/data/jellybeanandgone_pie.aa.json';
+            vegaEmbed('#jellybean1', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    <article>
+        <div id="jellybean2">
+        <script>
+            var spec = '/data/jellybeanandgone_pie1.aa.json';
+            vegaEmbed('#jellybean2', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    </section>
+</section>
+          

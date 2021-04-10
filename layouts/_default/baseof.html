@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ $title := site.Title }}
+    {{ if not .IsHome }}
+      {{ $title = printf "%s | %s" .Title site.Title }}
+    {{ end }}
+    <title>{{ $title }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <header class="page-header">
+        <nav>
+            <ul class="player-menu">
+                <li class="menu-heading">
+                    <h3>Players</h3>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/anicetnetennaba">A Nice Tnetennba</a>
+                </li>
+                <li>
+                    <a href="/boulderman94">Boulderman69</a>
+                </li>
+                <li><a href="/ham08">Pum08</a></li>
+                <li>
+                    <a href="/jellybeanandgone">JellyBeanAndGone</a>
+                </li>
+                <li>
+                    <a href="/n00dlesu">N00dleSu</a>
+                </li>
+                <li>
+                    <a href="/rakdoz">Rakdoz</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>

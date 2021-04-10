@@ -1,0 +1,44 @@
+---
+title: "ham08"
+date: 2021-04-10T15:48:37+01:00
+draft: false
+---
+
+<section class="page-content">
+    <section class="search">
+    <form>
+        <input type="search" placeholder="Search...">
+        <button type="submit" aria-lable="submit form">
+        </button>
+    </form>
+    </section>
+    <section class="grid">
+    <article>
+        <div id="ham">
+        <script>
+            var spec = '/data/ham08.aa.json';
+            vegaEmbed('#ham', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    <article>
+        <div id="ham1">
+        <script>
+            var spec = '/data/ham08_pie.aa.json';
+            vegaEmbed('#ham1', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    <article>
+        <div id="ham2">
+        <script>
+            var spec = '/data/ham08_pie1.aa.json';
+            vegaEmbed('#ham2', spec, {"height": 500}).then(function(result) {
+            }).catch(console.error);
+        </script>
+        </div>
+    </article>
+    </section>
+</section>

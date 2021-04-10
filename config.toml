@@ -1,0 +1,7 @@
+baseURL = "https://fortnitedeathstats.netlify.app/"
+languageCode = "en-uk"
+title = "Fortnite Death Stats"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[markup.goldmark.renderer]
+unsafe= true
