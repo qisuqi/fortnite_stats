@@ -3,7 +3,7 @@
 "description": "A simple bar chart with embedded data.",
 "title": "Total Deaths for all Players",
 "width": 1000, "height": 700,
-"data": {"url": "/data/data.json"},
+"data": {"url": "/.netlify/functions/death-data"},
 "mark": "bar",
 "params": [{
     "name": "Name",
