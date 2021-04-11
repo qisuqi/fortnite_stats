@@ -16,13 +16,11 @@
                 return a;
             }, {});
         const dateStr = `${parsedDate.day}-${monthNames[parsedDate.month-1]}`;
-
-        const gotOutStr = formEntries.gotout == 'on' ? 'Yes' : 'No';
-
+        
         return deathEntity = {
             'Name': formEntries.name,
             'Location': formEntries.location,
-            'Got Out': gotOutStr,
+            'Got Out': formEntries.gotout,
             'Date': dateStr,
             'Weapon Color': formEntries.weaponcolor,
             'Weapon Type': formEntries.weapontype,
