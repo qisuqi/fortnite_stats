@@ -1,7 +1,19 @@
 {
-    "name": "fortnitedeathstats",
-    "private": "true",
-    "dependencies": {
-      "faunadb": "^4.1.3"
-    }
+  "name": "fortnitedeathstats",
+  "private": "true",
+  "dependencies": {
+    "faunadb": "^4.1.3"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "tabWidth": 4
+        }
+      }
+    ]
   }
+}

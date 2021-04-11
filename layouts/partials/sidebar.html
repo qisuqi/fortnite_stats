@@ -1,0 +1,14 @@
+<nav>
+    <ul class="player-menu">
+      <li class="menu-heading">
+        <h3>Players</h3>
+      </li>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <a id="submit-death-button" class="button submit-death" href="#" data-modal-trigger aria-controls="submit-death-modal" aria-expanded="false">Submit Death</a>
+  </nav>

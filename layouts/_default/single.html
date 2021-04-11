@@ -1,5 +1,23 @@
 {{ define "main" }}
 
-{{ .Content }}
+<section class="page-content">
+    <section class="grid">
+        <article>
+            <div id="vis1">
+                <script>renderSpec('{{ .Params.playername }}.aa.json', 'vis1', 500, undefined);</script>
+            </div>
+        </article>
+        <article>
+            <div id="vis2">
+                <script>renderSpec('{{ .Params.playername }}_pie.aa.json', 'vis2', 500, undefined);</script>
+            </div>
+        </article>
+        <article>
+            <div id="vis3">
+                <script>renderSpec('{{ .Params.playername }}_pie1.aa.json', 'vis3', 500, undefined);</script>
+            </div>
+        </article>
+    </section>
+</section>
 
 {{ end }}
