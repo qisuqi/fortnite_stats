@@ -4,20 +4,22 @@
 "title": "Total Deaths Count",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"mark": "arc",
+"mark": "bar",
 "params": [{
     "name": "Name",
-    "select": {"type": "point", "fields": ["Location"]},
+    "select": {"type": "point", "fields": ["Got Out"]},
     "bind": "legend"
   }],
 "transform": [
-    {"filter": "datum['Location'] != 'NP'"}
+    {"filter": "datum['Location'] != 'NP'"},
+    {"filter": "datum['Got Out'] != 'null'"}
 ],
 "encoding": {
-    "theta": {"aggregate":"count"},
-    "color": {"field": "Location", "type": "nominal", "scale": {"scheme": "tableau20"}},
+    "y": {"aggregate":"count", "title": "Total Deaths"},
+    "x" : {"field": "Location", "type": "nominal"},
+    "tooltip": {"aggregate": "count"},
+    "color": {"field": "Got Out", "type": "nominal", "scale": {"scheme": "tableau20"}},
     "opacity": {
       "condition": {"param": "Name", "value": 1},
       "value": 0.2
-}},
-"view": {"stroke": null}}
+}}}
