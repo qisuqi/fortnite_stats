@@ -12,7 +12,7 @@
   }],
 "transform": [
     {"filter": "datum['Location'] != 'NP'"},
-    {"filter": "datum['Got Out'] != 'null'"}
+    {"filter": "datum['Date'] >= '10-Apr'"}
 ],
 "encoding": {
     "y": {"aggregate":"count", "title": "Total Deaths"},
