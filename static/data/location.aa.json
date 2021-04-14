@@ -11,7 +11,8 @@
     "bind": "legend"
   }],
 "transform": [
-    {"filter": "datum['Location'] != 'NP'"}
+    {"filter": "datum['Location'] != 'NP'"},
+    {"filter": "datum['Got Out'] != 'NA'"}
 ],
 "encoding": {
     "y": {"aggregate":"count", "title": "Total Deaths"},
