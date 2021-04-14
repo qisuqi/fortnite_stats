@@ -11,8 +11,7 @@
     "bind": "legend"
   }],
 "transform": [
-    {"filter": "datum['Location'] != 'NP'"},
-    {"filter": "datum.Date >= '10-Apr'"}
+    {"filter": "datum['Location'] != 'NP'"}
 ],
 "encoding": {
     "y": {"aggregate":"count", "title": "Total Deaths"},
