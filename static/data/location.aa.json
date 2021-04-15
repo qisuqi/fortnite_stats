@@ -22,7 +22,7 @@
       "axis": {"grid": false}
     },
     "x": {"field": "Got Out", "type": "nominal"},
-    "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+    "color": {"field": "Location", "scale": {"scheme": "tableau20"}},
     "tooltip": {"aggregate": "count"},
     "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
   },
