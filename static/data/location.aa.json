@@ -12,14 +12,20 @@
   }],
 "transform": [
     {"filter": "datum['Location'] != 'NP'"},
-    {"filter": "datum['Got Out'] != 'NA'"}
+    {"filter": "datum['Date'] >= '10-Apr'"}
 ],
 "encoding": {
-    "y": {"aggregate":"count", "title": "Total Deaths"},
-    "x" : {"field": "Location", "type": "nominal"},
+    "column": {"field": "Location", "type": "ordinal", "spacing": 10},
+    "y": {"aggregate":"count", "title": "Total Deaths", 
+      "axis": {"grid": false}},
+    "x" : {"field": "Got Out", "type": "nominal"},
+    "color" : {"field": "Location", "scale": {"scheme": "tableau20"}},
     "tooltip": {"aggregate": "count"},
-    "color": {"field": "Got Out", "type": "nominal", "scale": {"scheme": "tableau20"}},
     "opacity": {
       "condition": {"param": "Name", "value": 1},
       "value": 0.2
-}}}
+}},
+"config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }}
