@@ -4,20 +4,72 @@
 "title": "Total Deaths for all Players",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"mark": "bar",
-"params": [{
-    "name": "Name",
-    "select": {"type": "point", "fields": ["Weapon Color"]},
-    "bind": "legend"
-  }],
-"transform": [
-    {"filter": "datum['Weapon Color'] != 'NC'"}
-],
-"encoding": {
-    "y": {"aggregate":"count"},
-    "x" : {"field": "Weapon Color", "type": "nominal", "sort": ["White", "Green", "Blue", "Purple", "Gold", "Mythic"]},
-    "color": {"field": "Weapon Color", "type": "nominal", "scale": {"domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic"], "range": ["Silver", "Green",  "Blue", "Purple", "Gold", "Black", "Yellow"]}},
-    "opacity": {
-      "condition": {"param": "Name", "value": 1},
-      "value": 0.2
-}}}
+"hconcat": [
+    {
+  "mark": "arc",
+  "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Weapon Color"]},
+      "bind": "legend"
+    }
+  ],
+  "transform": [{"filter": "datum['Weapon Color'] != 'NC'"}],
+  "encoding": {
+    "theta": {"aggregate": "count"},
+    "color": {
+      "field": "Weapon Color",
+      "type": "nominal",
+      "scale": {
+        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic"],
+        "range": [
+          "Silver",
+          "Green",
+          "Blue",
+          "Purple",
+          "Gold",
+          "Black",
+          "Yellow"
+        ]
+      }
+    },
+    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  },
+  "view": {"stroke": null}
+    },
+ {
+  "mark": "bar",
+  "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Weapon Color"]},
+      "bind": "legend"
+    }
+  ],
+  "transform": [{"filter": "datum['Weapon Color'] != 'NC'"}],
+  "encoding": {
+    "y": {"aggregate": "count"},
+    "x": {
+      "field": "Weapon Color",
+      "type": "nominal",
+      "sort": ["White", "Green", "Blue", "Purple", "Gold", "Mythic"]
+    },
+    "color": {
+      "field": "Weapon Color",
+      "type": "nominal",
+      "scale": {
+        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic"],
+        "range": [
+          "Silver",
+          "Green",
+          "Blue",
+          "Purple",
+          "Gold",
+          "Black",
+          "Yellow"
+        ]
+      }
+    },
+    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  }}]
+}
