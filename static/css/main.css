@@ -136,9 +136,8 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.page-content .grid > article: nth-of-type(2){
-  grid-column: 1 / -1;
-},
+.page-content .grid > article: first-child,
+.page-content .grid > article: nth-child(2),
 .page-content .grid > article:last-child {
   grid-column: 1 / -1;
 }
