@@ -2,30 +2,29 @@
 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 "description": "A simple bar chart with embedded data.",
 "title": "Total Deaths Count",
-"width": {"step": 50}, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"mark": "bar",
-"params": [{
-    "name": "Name",
-    "select": {"type": "point", "fields": ["Got Out"]},
-    "bind": "legend"
-  }],
-"transform": [
-    {"filter": "datum['Location'] != 'NP'"},
-    {"filter": "datum['Date'] >= '10-Apr'"}
-],
-"encoding": {
+ "mark": "bar",
+ "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Got Out"]},
+      "bind": "legend"
+    }
+  ],
+ "transform": [
+    {"filter": "datum['Location'] != 'NP'"}
+  ],
+ "encoding": {
     "column": {"field": "Location", "type": "ordinal", "spacing": 10},
-    "y": {"aggregate":"count", "title": "Total Deaths", 
-      "axis": {"grid": false}},
-    "x" : {"field": "Got Out", "type": "nominal"},
-    "color" : {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+    "y": {
+      "aggregate": "count",
+      "title": "Total Deaths",
+      "axis": {"grid": false}
+    },
+    "x": {"field": "Got Out", "type": "nominal"},
+    "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
     "tooltip": {"aggregate": "count"},
-    "opacity": {
-      "condition": {"param": "Name", "value": 1},
-      "value": 0.2
-}},
-"config": {
-    "view": {"stroke": "transparent"},
-    "axis": {"domainWidth": 1}
-  }}
+    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  },
+ "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+}
