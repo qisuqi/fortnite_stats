@@ -5,7 +5,9 @@
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
 "hconcat": [
-    {
+  {
+  "width": 600,
+  "height": 500,    
   "mark": "arc",
   "params": [
     {
@@ -38,6 +40,8 @@
   "view": {"stroke": null}
     },
  {
+  "width": 600,
+  "height": 500,
   "mark": "bar",
   "params": [
     {
