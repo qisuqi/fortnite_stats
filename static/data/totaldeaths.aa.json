@@ -5,18 +5,24 @@
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
 "mark": "bar",
-"params": [{
-    "name": "Name",
-    "select": {"type": "point", "fields": ["Name"]},
-    "bind": "legend"
-  }],
+"params": [
+   {
+      "name": "legend",
+      "select": {"type": "point", "fields": ["Name"]},
+      "bind": "legend"
+    }
+  ],
 "encoding": {
-  "x": {"field": "Weapons", "type": "ordinal"},
-  "y": {"aggregate": "count", "title": "Deaths"},
-  "tooltip": {"aggregate": "count"},
-  "color": {"field": "Name", "type": "nominal", "scale": {"scheme": "tableau20"}},
-  "opacity": {
-      "condition": {"param": "Name", "value": 1},
-      "value": 0.2
-}
-}}
+    "x": {"field": "Weapons", "type": "ordinal"},
+    "y": {"aggregate": "count", "title": "Deaths"},
+    "tooltip": {"aggregate": "count"},
+    "color": {
+      "condition": {
+        "param": "legend",
+        "field": "Name",
+        "selection": "legend"
+      },
+      "value": "grey"
+    },
+ "opacity": {"condition": {"param": "legend", "value": 1}, "value": 0.2}
+ }}
