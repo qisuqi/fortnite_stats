@@ -137,7 +137,9 @@ body {
 }
 
 .page-content .grid > article: first-child,
-.page-content .grid > article: nth-child(2),
+.page-content .grid > article: nth-child(9){
+  grid-column: 1 / -1;
+},
 .page-content .grid > article:last-child {
   grid-column: 1 / -1;
 }
