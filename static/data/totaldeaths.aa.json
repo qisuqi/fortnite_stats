@@ -15,7 +15,10 @@
 "encoding": {
     "x": {"field": "Weapons", "type": "ordinal"},
     "y": {"aggregate": "count", "title": "Deaths"},
-    "tooltip": {"aggregate": "count"},
+    "tooltip": [
+      {"aggregate": "count", "title": "Number of Deaths"},
+      {"field": "Name", "type": "ordinal"}
+      ],
     "color": {
       "condition": {
         "param": "legend",
