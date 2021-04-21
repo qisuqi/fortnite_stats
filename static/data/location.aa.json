@@ -19,12 +19,14 @@
     "column": {"field": "Location", "type": "ordinal", "spacing": 10},
     "y": {
       "aggregate": "count",
-      "title": "Total Deaths",
-      "axis": {"grid": false}
+      "title": "Total Deaths"
     },
     "x": {"field": "Got Out", "type": "nominal"},
     "color": {"field": "Name", "scale": {"scheme": "tableau20"}},
-    "tooltip": {"aggregate": "count"},
+    "tooltip": [
+      {"aggregate": "count", "title": "Number of Deaths"},
+      {"field": "Name", "type": "ordinal"}
+      ],
     "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
   },
  "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
