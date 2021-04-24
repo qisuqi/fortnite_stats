@@ -13,7 +13,8 @@
     }
   ],
  "transform": [
-    {"filter": "datum['Location'] != 'NP'"}
+    {"filter": "datum['Location'] != 'NP'"},
+    {"filter": "datum['Got Out'] != 'NA'"}
   ],
  "encoding": {
     "column": {"field": "Location", "type": "ordinal", "spacing": 10},
