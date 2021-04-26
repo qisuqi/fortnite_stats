@@ -56,13 +56,13 @@
     "x": {
       "field": "Weapon Color",
       "type": "nominal",
-      "sort": ["White", "Green", "Blue", "Purple", "Gold", "Mythic"]
+      "sort": ["White", "Green", "Blue", "Purple", "Gold", "Mythic", "Exotic"]
     },
     "color": {
       "field": "Weapon Color",
       "type": "nominal",
       "scale": {
-        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic"],
+        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic", "Exotic"],
         "range": [
           "Silver",
           "Green",
@@ -70,7 +70,8 @@
           "Purple",
           "Gold",
           "Black",
-          "Yellow"
+          "Yellow",
+          "#add8e6"
         ]
       }
     },
