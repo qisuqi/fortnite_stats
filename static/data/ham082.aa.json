@@ -1,0 +1,56 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+"description": "A simple bar chart with embedded data.",
+"title": "Total Deaths Count - Ham08",
+"width": 1000, "height": 700,
+"data": {"url": "/.netlify/functions/death-data"},
+"transform": [{"filter": "datum.Name == 'Ham08'"}],
+"hconcat": [
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "arc",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Weapon Type"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
+      "encoding": {
+        "theta": {"aggregate": "count"},
+        "color": {
+          "field": "Weapon Type",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "view": {"stroke": null}
+    },
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Weapon Type"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
+      "encoding": {
+        "x": {"field": "Weapon Type", "type": "nominal"},
+        "y": {"aggregate": "count"},
+        "color": {
+          "field": "Weapon Type",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      }
+    }
+  ]
+}
