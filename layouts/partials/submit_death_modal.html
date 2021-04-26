@@ -1,3 +1,18 @@
+function LogicForm(answer) {
+
+  document.getElementById(answer + 'Question').style.display = "block";
+
+  if (answer == "yes") { // hide the div that is not selected
+
+    document.getElementById('location').style.display = "none";
+    document.getElementById('gotout').style.display = "none";
+    document.getElementById('weaponname').style.display = "none";
+    document.getElementById('weaponcolor').style.display = "none";
+    document.getElementById('weapontype').style.display = "none";
+    document.getElementById('typeofbow').style.display = "none";
+  }
+}
+
 <section class="modal" id="submit-death-modal" data-modal-target>
     <div class="modal__overlay" data-modal-close tabindex="-1"></div>
     <div class="modal__wrapper">
@@ -11,7 +26,7 @@
     </div>
     <div class="modal__content">
         <p>
-            <form id="submit-death-form" class="form submit-death">
+            <form id="submit-death-form" class="form submit-death" action="javascript:void(0)">
                 <ul class="flex-outer">
                     <li>
                         <label for="name">Name</label>
@@ -28,8 +43,8 @@
                     <li>
                         <label for="win">Win?</label>
                         <select id="win" name="win" required>
-                            <option value="No">No</option>
-                            <option value="Yes">Yes</option>
+                            <option value="No" onChange="LogicForm(this.value)">No</option>
+                            <option value="Yes" onChange="LogicForm(this.value)">Yes</option>
                         </select>
                     </li>
                     <li>
