@@ -4,7 +4,7 @@
   "title": "Total Deaths for all Players",
   "width": 1000,
   "height": 700,
-  "data": {},
+  "data": {"url": "/.netlify/functions/death-data"},
   "transform": [{"filter": "datum.Name == 'A Nice Tnetennba'"}],
   "hconcat": [
     {
