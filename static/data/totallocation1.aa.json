@@ -1,31 +1,93 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A simple bar chart with embedded data.",
-  "width": 700,
-  "height": 500,
   "title": "Total Deaths Count",
   "data": {"url": "/.netlify/functions/death-data"},
-  "mark": "bar",
-  "params": [
+    "hconcat": [
     {
-      "name": "Name",
-      "select": {"type": "point", "fields": ["Name"]},
-      "bind": "legend"
+      "width": 400,
+      "height": 500,
+      "params": [{"name": "Name", "select": "point"}],
+      "mark": {"type": "rect", "strokeWidth": 2},
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "x": {"field": "Name", "type": "nominal"},
+        "y": {"field": "Got Out", "type": "nominal"},
+        "fill": {"aggregate": "count", "type": "quantitative"},
+        "stroke": {
+          "condition": {"param": "Name", "empty": false, "value": "black"},
+          "value": null
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2},
+        "order": {"condition": {"param": "Name", "value": 1}, "value": 0}
+      },
+      "config": {
+        "scale": {"bandPaddingInner": 0, "bandPaddingOuter": 0},
+        "view": {"step": 40},
+        "range": {"ramp": {"scheme": "yellowgreenblue"}},
+        "axis": {"domain": false}
+      }
+    },
+    {
+      "width": 400,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Total Deaths",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+        },
+        "x": {"field": "Name", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [{"aggregate": "count", "title": "Number of Deaths"}],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+    },
+    {
+      "width": 400,
+      "height": 500, 
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Total Deaths",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+        },
+        "x": {"field": "Location", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [{"aggregate": "count", "title": "Number of Deaths"}],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
     }
-  ],
-  "transform": [
-    {"filter": "datum['Location'] != 'NP'"},
-    {"filter": "datum['Got Out'] != 'NA'"}
-  ],
-  "encoding": {
-    "y": {"aggregate": "count", "title": "Total Deaths",
-    "stack": "normalize", "axis": {"format": "%"}},
-    "x": {"field": "Location", "type": "nominal"},
-    "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
-    "tooltip": [
-      {"aggregate": "count", "title": "Number of Deaths"}
-    ],
-    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
-  },
-  "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+  ]
 }
