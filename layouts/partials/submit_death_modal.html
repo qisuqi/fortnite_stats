@@ -1,125 +1,164 @@
 <section class="modal" id="submit-death-modal" data-modal-target>
-        <div class="modal__overlay" data-modal-close tabindex="-1"></div>
-    <div class="modal__wrapper">
-    <div class="modal__header">
-        <div class="modal__title">Submit Death</div>
-        <button
-        class="modal__close"
-        data-modal-close
-        aria-label="Close Modal"
-        ></button>
-    </div>
-    <div class="modal__content">
-        <p>
-            <form id="submit-death-form" class="form submit-death">
-                <ul class="flex-outer">
-                    <li>
-                        <label for="name">Name</label>
-                        <select id="name" name="name" required>
-                            <option value="">Pick a name pum.</option>
-                            <option value="A Nice Tnetennba">A Nice Tnetennba</option>
-                            <option value="Boulderman94">Boulderman69</option>
-                            <option value="Ham08">Pum08</option>
-                            <option value="JellyBeanAndGone">JellyBeanAndGone</option>
-                            <option value="N00dleSu">N00dleSu</option>
-                            <option value="Rakdoz">Rakdoz</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="location">Location Landed</label>
-                        <select id="location" name="location">
-                            <option value="Boney Burbs">Boney Burbs</option>
-                            <option value="Colossal Crops">Colossal Crops</option>
-                            <option value="Catty Corner">Catty Corner</option>
-                            <option value="Coral Castle">Coral Castle</option>
-                            <option value="Craggy Cliffs">Craggy Cliffs</option>
-                            <option value="Dirty Docks">Dirty Docks</option>
-                            <option value="Holly Hedges">Holly Hedges</option>
-                            <option value="Lazy Lake">Lazy Lake</option>
-                            <option value="Misty Meadows">Misty Meadows</option>
-                            <option value="Pleasant Park">Pleasant Park</option>
-                            <option value="Retail Row">Retail Row</option>
-                            <option value="Slurpy Swamp">Slurpy Swamp</option>
-                            <option value="Stealthy Stronghold">Stealthy Stronghold</option>
-                            <option value="Steamy Stacks">Steamy Stacks</option>
-                            <option value="Sweaty Sands">Sweaty Sands</option>
-                            <option value="The Spire">The Spire</option>
-                            <option value="Weeping Woods">Weeping Woods</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="gotout">Got Out?</label>
-                        <select id="gotout" name="gotout">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option> 
-                        </select>                            
-                    </li>
-                    <li>
-                        <label for="weaponname">Weapon Name</label>
-                        <select id="weaponname" name="weaponname">
-                            <option value="AR">AR</option>
-                            <option value="Bow">Bow</option>
-                            <option value="Car">Car</option>
-                            <option value="Explosives">Explosives</option>
-                            <option value="Fall">Fall</option>
-                            <option value="Guardian">Guardian</option>
-                            <option value="Harpoon">Harpoon</option>
-                            <option value="Own">Own</option>
-                            <option value="Pickaxe">Pickaxe</option>
-                            <option value="Pistol">Pistol</option>
-                            <option value="RPG">RPG</option>
-                            <option value="Revolver">Revolver</option>
-                            <option value="SMG">SMG</option>
-                            <option value="Shotgun">Shotgun</option>
-                            <option value="Storm">Storm</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="weaponcolor">Weapon Color</label>
-                        <select id="weaponcolor" name="weaponcolor">
-                            <option value="NC">N/A</option>
-                            <option value="White">White</option>
-                            <option value="Green">Green</option>
-                            <option value="Blue">Blue</option>
-                            <option value="Purple">Purple</option>
-                            <option value="Gold">Gold</option>
-                            <option value="Mythic">Mythic</option>
-                            <option value="Exotic">Exotic</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="weapontype">Weapon Type</label>
-                        <select id="weapontype" name="weapontype">
-                            <option value="NT">N/A</option>
-                            <option value="MS">Makeshift</option>
-                            <option value="Mech">Mechanical</option>
-                            <option value="Primal">Primal</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="typeofbow">Type of Bow</label>
-                        <select id="typeofbow" name="typeofbow">
-                            <option value="NT">N/A</option>
-                            <option value="Explosive">Explosive Bow</option>
-                            <option value="Flame">Flame Bow</option>
-                            <option value="Stink">Stink Bow</option>
-                            <option value="Shockwave">Shockwave Bow</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date"></input>
-                    </li>
-                </ul>
-                <button type="submit">Submit</button>
-            </form>
-            <div class="hidden" id="death-form-result"></div>
-        </p>
-        <br/>
-        <p>
-            <a class="button cancel" href="#" data-modal-close>Close</a>
-        </p>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+  <div class="modal__overlay" data-modal-close tabindex="-1"></div>
+  <div class="modal__wrapper">
+  <div class="modal__header">
+    <div class="modal__title">Submit Death</div>
+    <button
+      class="modal__close"
+      data-modal-close
+      aria-label="Close Modal"
+    ></button>
+  </div>
+  <div class="modal__content">
+      <form id="submit-death-form" class="form submit-death">
+        <script>
+          $(document).ready(function() {
+            $(".form-div1").show();
+            $(
+              ".form-div2, .form-div3, .form-div4, .form-div5, .form-div6"
+            ).hide();
+
+            $("#win").change(function() {
+              $(".form-div2, .form-div3, .form-div4, .form-div5").toggle(
+                $(this).val() == "No"
+              );
+            });
+
+            $("#weaponname").change(function() {
+              $(".form-div6").toggle($(this).val() == "Bow");
+            });
+          });
+        </script>
+        <ul class="flex-outer">
+          <li>
+            <label for="name">Name</label>
+            <select id="name" name="name" required>
+              <option value="">Pick a name pum.</option>
+              <option value="A Nice Tnetennba">A Nice Tnetennba</option>
+              <option value="Boulderman94">Boulderman69</option>
+              <option value="Ham08">Pum08</option>
+              <option value="JellyBeanAndGone">JellyBeanAndGone</option>
+              <option value="N00dleSu">N00dleSu</option>
+              <option value="Rakdoz">Rakdoz</option>
+            </select>
+          </li>
+          <li>
+            <label for="location">Location Landed</label>
+            <select id="location" name="location">
+              <option value="">Pick a location</option>
+              <option value="Boney Burbs">Boney Burbs</option>
+              <option value="Colossal Crops">Colossal Crops</option>
+              <option value="Catty Corner">Catty Corner</option>
+              <option value="Coral Castle">Coral Castle</option>
+              <option value="Craggy Cliffs">Craggy Cliffs</option>
+              <option value="Dirty Docks">Dirty Docks</option>
+              <option value="Holly Hedges">Holly Hedges</option>
+              <option value="Lazy Lake">Lazy Lake</option>
+              <option value="Misty Meadows">Misty Meadows</option>
+              <option value="Pleasant Park">Pleasant Park</option>
+              <option value="Retail Row">Retail Row</option>
+              <option value="Slurpy Swamp">Slurpy Swamp</option>
+              <option value="Stealthy Stronghold">Stealthy Stronghold</option>
+              <option value="Steamy Stacks">Steamy Stacks</option>
+              <option value="Sweaty Sands">Sweaty Sands</option>
+              <option value="The Spire">The Spire</option>
+              <option value="Weeping Woods">Weeping Woods</option>
+              <option value="Others">Others</option>
+            </select>
+          </li>
+          <div class="form-div1">
+            <li>
+              <label for="win">Win</label>
+              <select id="win" name="win" required>
+                <option value="">Pick an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div2">
+            <li>
+              <label for="gotout">Got Out?</label>
+              <select id="gotout" name="gotout">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div3">
+            <li>
+              <label for="weaponcolor">Weapon Color</label>
+              <select id="weaponcolor" name="weaponcolor">
+                <option value="NC">N/A</option>
+                <option value="White">White</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Gold">Gold</option>
+                <option value="Mythic">Mythic</option>
+                <option value="Exotic">Exotic</option>
+              </select>
+            </li>
+          </div>
+          <div class="forn-div4">
+            <div class="form-div3">
+              <li>
+                <label for="weapontype">Weapon Type</label>
+                <select id="weapontype" name="weapontype">
+                  <option value="NT">N/A</option>
+                  <option value="MS">Makeshift</option>
+                  <option value="Mech">Mechanical</option>
+                  <option value="Primal">Primal</option>
+                </select>
+              </li>
+            </div>
+          </div>
+          <div class="form-div5">
+            <li>
+              <label for="weaponname">Weapon Name</label>
+              <select id="weaponname" name="weaponname">
+                <option value="AR">AR</option>
+                <option value="Bow">Bow</option>
+                <option value="Car">Car</option>
+                <option value="Explosives">Explosives</option>
+                <option value="Fall">Fall</option>
+                <option value="Guardian">Guardian</option>
+                <option value="Harpoon">Harpoon</option>
+                <option value="Own">Own</option>
+                <option value="Pickaxe">Pickaxe</option>
+                <option value="Pistol">Pistol</option>
+                <option value="RPG">RPG</option>
+                <option value="Revolver">Revolver</option>
+                <option value="SMG">SMG</option>
+                <option value="Shotgun">Shotgun</option>
+                <option value="Storm">Storm</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div6">
+            <li>
+              <label for="typeofbow">Type of Bow</label>
+              <select id="typeofbow" name="typeofbow">
+                <option value="NT">N/A</option>
+                <option value="Explosive">Explosive Bow</option>
+                <option value="Flame">Flame Bow</option>
+                <option value="Stink">Stink Bow</option>
+                <option value="Shockwave">Shockwave Bow</option>
+              </select>
+            </li>
+          </div>
+        </ul>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="hidden" id="death-form-result"></div>
+      <br/>
+      <p>
+        <a class="button cancel" href="#" data-modal-close>Close</a>
+      </p>
   </div>
   </div>
 </section>
