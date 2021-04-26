@@ -20,6 +20,7 @@
         return deathEntity = {
             'Name': formEntries.name,
             'Location': formEntries.location,
+            'Win': formEntries.win,
             'Got Out': formEntries.gotout,
             'Date': dateStr,
             'Weapon Color': formEntries.weaponcolor,
