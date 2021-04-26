@@ -14,15 +14,15 @@
       "params": [
         {
           "name": "Name",
-          "select": {"type": "point", "fields": ["Weapon Type"]},
+          "select": {"type": "point", "fields": ["Type of Bow"]},
           "bind": "legend"
         }
       ],
-      "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
+      "transform": [{"filter": "datum['Type of Bow'] != 'NT'"}],
       "encoding": {
         "theta": {"aggregate": "count"},
         "color": {
-          "field": "Weapon Type",
+          "field": "Type of Bow",
           "type": "nominal",
           "scale": {"scheme": "tableau20"}
         },
@@ -37,16 +37,16 @@
       "params": [
         {
           "name": "Name",
-          "select": {"type": "point", "fields": ["Weapon Type"]},
+          "select": {"type": "point", "fields": ["Type of Bow"]},
           "bind": "legend"
         }
       ],
-      "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
+      "transform": [{"filter": "datum['Type of Bow'] != 'NT'"}],
       "encoding": {
-        "x": {"field": "Weapon Type", "type": "nominal"},
+        "x": {"field": "Type of Bow", "type": "nominal"},
         "y": {"aggregate": "count"},
         "color": {
-          "field": "Weapon Type",
+          "field": "Type of Bow",
           "type": "nominal",
           "scale": {"scheme": "tableau20"}
         },
