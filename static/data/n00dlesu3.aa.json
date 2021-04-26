@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "Total Deaths - N00dleSu",
+  "width": 1000,
+  "height": 700,
+  "data": {"url": "/.netlify/functions/death-data"},
+  "transform": [{"filter": "datum.Name == 'N00dleSu'"}],
+  "hconcat": [
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "arc",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Type of Bow"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Type of Bow'] != 'NT'"}],
+      "encoding": {
+        "theta": {"aggregate": "count"},
+        "color": {
+          "field": "Type of Bow",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "view": {"stroke": null}
+    },
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Type of Bow"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Type of Bow'] != 'NT'"}],
+      "encoding": {
+        "x": {"field": "Type of Bow", "type": "nominal"},
+        "y": {"aggregate": "count"},
+        "color": {
+          "field": "Type of Bow",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      }
+    }
+  ]
+}
