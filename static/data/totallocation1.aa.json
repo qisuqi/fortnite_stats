@@ -4,7 +4,7 @@
   "width": 700,
   "height": 500,
   "title": "Total Deaths Count",
-  "data": {},
+  "data": {"url": "/.netlify/functions/death-data"},
   "mark": "bar",
   "params": [
     {
