@@ -1,16 +1,56 @@
 {
 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 "description": "A simple bar chart with embedded data.",
-"title": "Total Deaths Count - Boulderman94",
+"title": "Total Deaths Count - A Nice Tnetennaba",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"mark": "bar",
 "transform": [
     {"filter": "datum.Name == 'Boulderman94'"}
 ],
-"encoding": {
-  "x": {"field": "Weapons", "type": "ordinal"},
-  "y": {"aggregate": "count", "title": "Deaths"},
-  "tooltip": {"aggregate": "count"},
-  "color": {"value": "#ff9900"}
-}}
+"hconcat": [
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "arc",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Weapon Name"]},
+          "bind": "legend"
+        }
+      ],
+      "encoding": {
+        "theta": {"aggregate": "count"},
+        "color": {
+          "field": "Weapon Name",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "view": {"stroke": null}
+    },
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Weapon Name"]},
+          "bind": "legend"
+        }
+      ],
+      "encoding": {
+        "x": {"field": "Weapon Name", "type": "nominal"},
+        "y": {"aggregate": "count"},
+        "color": {
+          "field": "Weapon Name",
+          "type": "nominal",
+          "scale": {"scheme": "tableau20"}
+        },
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      }
+    }
+  ]
+}
