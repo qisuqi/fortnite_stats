@@ -3,34 +3,7 @@
   "description": "A simple bar chart with embedded data.",
   "title": "Total Deaths Count",
   "data": {"url": "/.netlify/functions/death-data"},
-    "hconcat": [
-    {
-      "width": 400,
-      "height": 500,
-      "params": [{"name": "Name", "select": "point"}],
-      "mark": {"type": "rect", "strokeWidth": 2},
-      "transform": [
-        {"filter": "datum['Location'] != 'NP'"},
-        {"filter": "datum['Got Out'] != 'NA'"}
-      ],
-      "encoding": {
-        "x": {"field": "Name", "type": "nominal"},
-        "y": {"field": "Got Out", "type": "nominal"},
-        "fill": {"aggregate": "count", "type": "quantitative"},
-        "stroke": {
-          "condition": {"param": "Name", "empty": false, "value": "black"},
-          "value": null
-        },
-        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2},
-        "order": {"condition": {"param": "Name", "value": 1}, "value": 0}
-      },
-      "config": {
-        "scale": {"bandPaddingInner": 0, "bandPaddingOuter": 0},
-        "view": {"step": 40},
-        "range": {"ramp": {"scheme": "yellowgreenblue"}},
-        "axis": {"domain": false}
-      }
-    },
+  "hconcat": [
     {
       "width": 400,
       "height": 500,
@@ -43,26 +16,27 @@
         }
       ],
       "transform": [
-        {"filter": "datum['Location'] != 'NP'"},
-        {"filter": "datum['Got Out'] != 'NA'"}
+        {"filter": "datum['Win'] != 'NA'"}
       ],
       "encoding": {
         "y": {
           "aggregate": "count",
-          "title": "Total Deaths",
+          "title": "Win %",
           "stack": "normalize",
           "axis": {"format": "%"}
         },
         "x": {"field": "Name", "type": "nominal"},
-        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
-        "tooltip": [{"aggregate": "count", "title": "Number of Deaths"}],
+        "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+          {"aggregate": "count", "title": "Number of Deaths"},
+          {"field": "Win"}],
         "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
       },
       "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
     },
     {
       "width": 400,
-      "height": 500, 
+      "height": 500,
       "mark": "bar",
       "params": [
         {
@@ -78,13 +52,46 @@
       "encoding": {
         "y": {
           "aggregate": "count",
-          "title": "Total Deaths",
+          "title": "Got Out %",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+        },
+        "x": {"field": "Name", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+          {"aggregate": "count", "title": "Number of Deaths"},
+          {"field": "Got Out"}],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+    },
+    {
+      "width": 400,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Got Out %",
           "stack": "normalize",
           "axis": {"format": "%"}
         },
         "x": {"field": "Location", "type": "nominal"},
         "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
-        "tooltip": [{"aggregate": "count", "title": "Number of Deaths"}],
+        "tooltip": [
+          {"aggregate": "count", "title": "Number of Deaths"},
+          {"field": "Got Out"}],
         "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
       },
       "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
