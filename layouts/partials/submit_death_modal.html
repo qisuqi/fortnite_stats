@@ -19,7 +19,7 @@
           $(document).ready(function() {
             $(".form-div1").show();
             $(
-              ".form-div2, .form-div3, .form-div4, .form-div5, .form-div6"
+              ".form-div2, .form-div3, .form-div4, .form-div5, .form-div6, .form-div7"
             ).hide();
 
             $("#win").change(function() {
@@ -31,6 +31,11 @@
             $("#weaponname").change(function() {
               $(".form-div6").toggle($(this).val() == "Bow");
             });
+            
+            $("#weaponname").change(function() {
+              $(".form-div7").toggle($(this).val() == "Explosives");
+            });
+            
           });
         </script>
         <ul class="flex-outer">
@@ -155,6 +160,16 @@
                 <option value="Shockwave">Shockwave Bow</option>
                 <option value="Unstable">Unstable Bow</option>
                 <option value="Grappler">Grappler Bow</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div7">
+            <li>
+              <label for="typeofexplosives">Type of Explosives</label>
+              <select id="typeofexplosives" name="typeofexplosives">
+                <option value="NT">N/A</option>
+                <option value="Grenade">Grenade</option>
+                <option value="RPG">RPG</option>
               </select>
             </li>
           </div>
