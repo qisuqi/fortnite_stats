@@ -23,7 +23,7 @@
       "field": "Weapon Color",
       "type": "nominal",
       "scale": {
-        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic"],
+        "domain": ["White", "Green", "Blue", "Purple", "Gold", "NC", "Mythic", "Exotic"],
         "range": [
           "Silver",
           "Green",
@@ -31,7 +31,8 @@
           "Purple",
           "Gold",
           "Black",
-          "Yellow"
+          "Yellow",
+          "#add8e6"
         ]
       }
     },
