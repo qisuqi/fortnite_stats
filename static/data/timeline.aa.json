@@ -4,22 +4,29 @@
 "title": "Total Deaths by Date",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"transform": [
-    {"filter": "datum['Weapon Name'] != 'NW'"}
+"transform": [{"filter": "datum['Weapon Name'] != 'NW'"}],
+  "mark": "bar",
+  "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Weapon Name"]},
+      "bind": "legend"
+    }
   ],
-"mark": "line",
-"params": [{
-    "name": "Name",
-    "select": {"type": "point", "fields": ["Weapon Name"]},
-    "bind": "legend"
-  }],
-"encoding": {
-  "x": {"field": "Date", "type": "temporal",  "axis": {"format": "%d/%m", "grid": false}},
-  "y": {"aggregate": "count", "title": "Deaths"},
-  "tooltip": {"aggregate": "count"},
-  "color": {"field": "Weapon Name", "type": "nominal", "scale": {"scheme": "tableau20"}},
-   "opacity": {
-      "condition": {"param": "Name", "value": 1},
-      "value": 0.2
-}
-}}
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "timeUnit": "monthdate",
+      "axis": {"grid": false}
+    },
+    "y": {"aggregate": "count", "title": "Deaths"},
+    "tooltip": [{"aggregate": "count", "title": "No. of Deaths"},
+    {"field": "Name", "title": "Player"}],
+    "color": {
+      "field": "Weapon Name",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
+    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  }}
