@@ -16,8 +16,8 @@
   "encoding": {
     "x": {
       "field": "Date",
-      "type": "temporal",
-      "timeUnit": "monthdate",
+      "type": "ordinal",
+      "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       "axis": {"grid": false}
     },
     "y": {"aggregate": "count", "title": "Deaths"},
