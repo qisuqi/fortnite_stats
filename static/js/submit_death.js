@@ -28,7 +28,8 @@
             'Weapon Name': formEntries.weaponname,
             'Weapons': `${formEntries.weaponcolor} ${formEntries.weapontype} ${formEntries.weaponname}`,
             'Type of Bow': formEntries.typeofbow,
-            'Type of Explosives': formEntries.typeofexplosives
+            'Type of Explosives': formEntries.typeofexplosives,
+            'Type of Shotgun': formEntries.typeofshotgun
         };
     };
 
