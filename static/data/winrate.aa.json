@@ -26,7 +26,7 @@
         "x": {"field": "Name", "type": "nominal"},
         "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
         "tooltip": [
-            {"aggregate": "count", "title": "Number of Deaths"},
+            {"aggregate": "count", "title": "No. of Deaths"},
             {"field": "Win"}
           ],
           "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
@@ -34,7 +34,7 @@
         "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
     },
     {
-      "width": 250,
+      "width": 300,
       "height": 500,
       "mark": "bar",
       "params": [
@@ -53,9 +53,9 @@
           "axis": {"format": "%"}
           },
         "x": {"field": "Location", "type": "nominal"},
-        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
         "tooltip": [
-            {"aggregate": "count", "title": "Number of Deaths"},
+            {"aggregate": "count", "title": "No. of Deaths"},
             {"field": "Got Out"}
           ],
         "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
