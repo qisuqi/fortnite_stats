@@ -137,10 +137,13 @@ body {
 }
 
 .page-content .grid > article:first-child,
-.page-content .grid > article:nth-child(6),
-.page-content .grid > article:nth-child(7),
 .page-content .grid > article:last-child {
   grid-column: 1 / -1;
+}
+
+.page-content .grid > article:nth-child(6),
+.page-content .grid > article:nth-child(7){
+  grid-column: 1 / -2;
 }
 
 .search-and-user {
