@@ -49,7 +49,7 @@
       "encoding": {
         "y": {
           "aggregate": "count",
-          "title": "Got Out %",
+          "title": "Win %",
           "stack": "normalize",
           "axis": {"format": "%"}
           },
