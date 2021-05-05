@@ -23,10 +23,9 @@
           "stack": "normalize",
           "axis": {"format": "%"}
           },
-        "x": {
-          "field": "Name", "type": "nominal"},
-          "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
-          "tooltip": [
+        "x": {"field": "Name", "type": "nominal"},
+        "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
             {"aggregate": "count", "title": "Number of Deaths"},
             {"field": "Win"}
           ],
@@ -41,7 +40,7 @@
       "params": [
         {
           "name": "Name",
-          "select": {"type": "point", "fields": ["Name"]},
+          "select": {"type": "point", "fields": ["Location"]},
           "bind": "legend"
         }
       ],
@@ -53,14 +52,13 @@
           "stack": "normalize",
           "axis": {"format": "%"}
           },
-        "x": {
-          "field": "Name", "type": "nominal"},
-          "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
-          "tooltip": [
+        "x": {"field": "Location", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
             {"aggregate": "count", "title": "Number of Deaths"},
             {"field": "Got Out"}
           ],
-          "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
         },
         "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
       }
