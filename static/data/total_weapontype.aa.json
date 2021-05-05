@@ -4,50 +4,23 @@
 "title": "Total Deaths for all Players",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-  "hconcat":[
-    {
-    "width": 600,
-    "height": 500,  
-    "mark": "arc",
-    "params": [
-    {
-      "name": "Name",
-      "select": {"type": "point", "fields": ["Weapon Type"]},
-      "bind": "legend"
-    }
-    ],
-    "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
-    "encoding": {
-    "theta": {"aggregate": "count"},
-    "color": {
-      "field": "Weapon Type",
-      "type": "nominal",
-      "scale": {"scheme": "tableau20"}
-    },
-    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
-    },
-    "view": {"stroke": null}
-    },
-    {
-    "width": 600,
-    "height": 500,  
-    "mark": "bar",
-    "params": [
-    {
-      "name": "Name",
-      "select": {"type": "point", "fields": ["Weapon Type"]},
-      "bind": "legend"
-    }
-    ],
-    "transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
-    "encoding": {
-      "x": {"field": "Weapon Type", "type": "nominal"},
-      "y": {"aggregate": "count"},
-      "color": {
-        "field": "Weapon Type",
-        "type": "nominal",
-        "scale": {"scheme": "tableau20"}
-      },
-      "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
-    }}]
+"transform": [{"filter": "datum['Weapon Type'] != 'NT'"}],
+"mark": {"type":"arc", "tooltip": {"content": "encoding"}},
+"params": [
+  {
+    "name": "Name",
+    "select": {"type": "point", "fields": ["Weapon Type"]},
+    "bind": "legend"
+  }
+  ],
+"encoding": {
+  "theta": {"aggregate": "count", "title": "No. of Deaths"},
+  "color": {
+    "field": "Weapon Type",
+    "type": "nominal",
+    "scale": {"scheme": "tableau20"}
+  },
+"opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  },
+"view": {"stroke": null}
 }
