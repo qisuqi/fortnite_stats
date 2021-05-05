@@ -4,16 +4,16 @@
 "title": "Total Deaths for all Players",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
- "transform": [{"filter": "datum['Weapon Name'] != 'NW'"}],
- "mark": {"type":"arc", "tooltip": {"content": "encoding"}},
- "params": [
+"transform": [{"filter": "datum['Weapon Name'] != 'NW'"}],
+"mark": {"type":"arc", "tooltip": {"content": "encoding"}},
+"params": [
   {
     "name": "Name",
     "select": {"type": "point", "fields": ["Weapon Name"]},
     "bind": "legend"
   }
   ],
-"encoding": {
+ "encoding": {
   "theta": {"aggregate": "count", "title": "No. of Deaths"},
   "color": {
     "field": "Weapon Name",
