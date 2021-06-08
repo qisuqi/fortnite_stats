@@ -1,7 +1,6 @@
 <nav>
     <ul class="player-menu">
       {{ $currentPage := . }}
-      {{ range .Site.Menus.main }}
       <li class="menu-heading">
         <h3>Seasons</h3>
       </li>
@@ -12,6 +11,7 @@
       <li class="menu-heading">
         <h3>Players</h3>
       </li>
+      {{ range .Site.Menus.main }}
       <li>
         <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
       </li>
