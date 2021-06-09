@@ -14,7 +14,14 @@
     ],
 "transform": [
     {"filter": "datum['Weapon Color'] != 'NC'"},
-    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}],
+    {
+      "filter": {
+        "timeUnit": "monthdate",
+        "field": "Date",
+        "range": [{"month": "Jun", "date": 8}, {"month": "Dec", "date": 30}]
+      }
+    }
+],
 "encoding": {
   "theta": {"aggregate": "count", "title": "No. of Deaths"},
   "color": {
