@@ -4,7 +4,7 @@
   "title": "Total Deaths Count",
   "data": {"url": "/.netlify/functions/death-data"},
   "transform": [
-    {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}
+    {"filter": {"timeUnit": "monthdate", "field": "Date", "range": [{"month": "Mar", "date": 18}, {"month": "Jun", "date": 7}] }}
   ],
   "hconcat": [
     {
