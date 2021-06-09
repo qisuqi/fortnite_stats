@@ -3,6 +3,9 @@
   "description": "A simple bar chart with embedded data.",
   "title": "Total Deaths Count",
   "data": {"url": "/.netlify/functions/death-data"},
+  "transform": [
+    {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}
+  ],
   "hconcat": [
     {
       "width": 250,
