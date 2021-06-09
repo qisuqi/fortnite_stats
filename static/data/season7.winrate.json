@@ -8,7 +8,7 @@
       "filter": {
         "timeUnit": "monthdate",
         "field": "Date",
-        "range": [{"month": "Mar", "date": 16}, {"month": "Jun", "date": 7}]
+        "range": [{"month": "Jun", "date": 8}, {"month": "Dec", "date": 30}]
       }
     }
   ],
