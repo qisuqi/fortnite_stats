@@ -2,12 +2,53 @@
 
 <section class="page-content">
     <section class="grid">
-        <article>
-            <div id="vis1">
-                <script>renderSpec('{{ .Params.seasonname }}.timeline.json', 'vis1', 500, undefined);</script>
-            </div>
-        </article>
+    <article>
+        <div id="vis1">
+            <script>renderSpec('{{ .Params.seasonname }}.totaldeaths.json','vis1', 500, 1200);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis2">
+            <script>renderSpec('{{ .Params.seasonname }}.total_weaponname.json','vis2', 250, 250);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis3">
+            <script>renderSpec('{{ .Params.seasonname }}.total_weaponcolor.json', 'vis3', 250, 250);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis4">
+            <script>renderSpec('{{ .Params.seasonname }}.total_weapontype.json', 'vis4', 250, 250);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis5">
+            <script>renderSpec('{{ .Params.seasonname }}.typeofbow.json', 'vis5', 250, 250);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis6">
+            <script>renderSpec('{{ .Params.seasonname }}.winrate.json', 'vis6', 500, 600);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis7">
+            <script>renderSpec('{{ .Params.seasonname }}.gotoutrate.json', 'vis7', 500, 600);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis8">
+            <script>renderSpec('{{ .Params.seasonname }}.totallocation.json', 'vis8', 500, 1200);</script>
+        </div>
+    </article>
+    <article>
+        <div id="vis9">
+            <script>renderSpec('{{ .Params.seasonname }}.timeline.json', 'vis9', 500, 1200);</script>
+        </div>
+    </article>
     </section>
 </section>
+
 
 {{ end }}
