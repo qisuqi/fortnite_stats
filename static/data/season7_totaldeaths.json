@@ -1,0 +1,34 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+"description": "A simple bar chart with embedded data.",
+"title": "Total Deaths of All Players",
+"width": 1000, "height": 700,
+"data": {"url": "/.netlify/functions/death-data"},
+"transform": [
+    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}
+],
+"mark": "bar",
+"params": [
+   {
+      "name": "legend",
+      "select": {"type": "point", "fields": ["Name"]},
+      "bind": "legend"
+    }
+  ],
+"encoding": {
+    "x": {"field": "Weapons", "type": "ordinal"},
+    "y": {"aggregate": "count", "title": "Deaths"},
+    "tooltip": [
+      {"aggregate": "count", "title": "Number of Deaths"},
+      {"field": "Name", "type": "ordinal"}
+      ],
+    "color": {
+      "condition": {
+        "param": "legend",
+        "field": "Name",
+        "selection": "legend"
+      },
+      "value": "grey"
+    },
+ "opacity": {"condition": {"param": "legend", "value": 1}, "value": 0.2}
+ }}
