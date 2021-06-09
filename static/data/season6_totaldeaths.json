@@ -4,6 +4,9 @@
 "title": "Total Deaths of All Players",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
+"transform": [
+    {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}
+],
 "mark": "bar",
 "params": [
    {
