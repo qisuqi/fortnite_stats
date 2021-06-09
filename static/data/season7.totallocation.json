@@ -15,7 +15,13 @@
  "transform": [
     {"filter": "datum['Location'] != 'NP'"},
     {"filter": "datum['Got Out'] != 'NA'"},
-    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}
+    {
+      "filter": {
+        "timeUnit": "monthdate",
+        "field": "Date",
+        "range": [{"month": "Jun", "date": 8}, {"month": "Dec", "date": 30}]
+      }
+    }
   ],
  "encoding": {
     "column": {"field": "Location", "type": "ordinal", "spacing": 10},
