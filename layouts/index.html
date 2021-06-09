@@ -1,53 +1,38 @@
 {{ define "main" }}
 
-<section class="page-content">
-    <section class="grid">
-    <article>
-        <div id="vis1">
-            <script>renderSpec('totaldeaths.aa.json', 'vis1', 500, 1200);</script>
+    <section class="page-content">
+      <div class="main-container">
+        <div class="heading-container">
+          <h1 class="heading">Seasons Overview</h1>
         </div>
-    </article>
-    <article>
-        <div id="vis2">
-            <script>renderSpec('total_weaponname.aa.json', 'vis2', 250, 250);</script>
+        <div class="card-container">
+          <div class="card card-1">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Most deadly weapon in Season 6 is Purple Pump Shotgun</h2>
+          </div>
+          <div class="card card-2">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Most deadly weapon in Season 7 is ?</h2>
+          </div>
+          <div class="card card-3">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Most deadly location in Season 6 is Pleasant Park</h2>
+          </div>
+          <div class="card card-4">
+            <div class="card__icon"><i class="fas fa-bolt"></i></div>
+            <p class="card__exit"><i class="fas fa-times"></i></p>
+            <h2 class="card__title">Most deadly location in Season 7 is ?</h2>
+          </div>
         </div>
-    </article>
-    <article>
-        <div id="vis3">
-            <script>renderSpec('total_weaponcolor.aa.json', 'vis3', 250, 250);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis4">
-            <script>renderSpec('total_weapontype.aa.json', 'vis4', 250, 250);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis5">
-            <script>renderSpec('typeofbow.aa.json', 'vis5', 250, 250);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis6">
-            <script>renderSpec('winrate.aa.json', 'vis6', 500, 600);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis7">
-            <script>renderSpec('gotoutrate.aa.json', 'vis7', 500, 600);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis8">
-            <script>renderSpec('totallocation.aa.json', 'vis8', 500, 1200);</script>
-        </div>
-    </article>
-    <article>
-        <div id="vis9">
-            <script>renderSpec('timeline.aa.json', 'vis9', 500, 1200);</script>
-        </div>
-    </article>
+      </div>
     </section>
-</section>
+
+  <footer>
+   @ NoodleSu
+  </footer>
+
 
 {{ end }}
