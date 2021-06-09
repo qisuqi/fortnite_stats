@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "Total Deaths Count",
+  "data": {"url": "/.netlify/functions/death-data"},
+  "transform": [
+    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}
+  ],
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Got Out %",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+        },
+        "x": {"field": "Name", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+          {"aggregate": "count", "title": "Number of Deaths"},
+          {"field": "Got Out"}],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+    },
+    {
+      "width": 300,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [
+        {"filter": "datum['Location'] != 'NP'"},
+        {"filter": "datum['Got Out'] != 'NA'"}
+      ],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Got Out %",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+        },
+        "x": {"field": "Location", "type": "nominal"},
+        "color": {"field": "Got Out", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+          {"aggregate": "count", "title": "Number of Deaths"},
+          {"field": "Got Out"}],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+      },
+      "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+    }
+  ]
+}
