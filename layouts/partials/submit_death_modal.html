@@ -19,7 +19,7 @@
           $(document).ready(function() {
             $(".form-div1").show();
             $(
-              ".form-div2, .form-div3, .form-div4, .form-div5, .form-div6, .form-div7, .form-div8"
+              ".form-div2, .form-div3, .form-div4, .form-div5, .form-div6, .form-div7, .form-div8, .form-div9, .form-div10, .form-div11"
             ).hide();
 
             $("#win").change(function() {
@@ -40,6 +40,17 @@
               $(".form-div8").toggle($(this).val() == "Shotgun");
             });
             
+            $("#weaponname").change(function() {
+              $(".form-div9").toggle($(this).val() == "SMG");
+            });
+            
+            $("#weaponname").change(function() {
+              $(".form-div10").toggle($(this).val() == "AR");
+            });
+            
+            $("#weaponname").change(function() {
+              $(".form-div11").toggle($(this).val() == "Pistol");
+            });
             
           });
         </script>
@@ -151,7 +162,6 @@
                 <option value="Fall">Fall</option>
                 <option value="Guardian">Guardian</option>
                 <option value="Harpoon">Harpoon</option>
-                <option value="Heavy AR">Heavy AR</option>
                 <option value="Infantry Rifle">Infantry Rifle</option>
                 <option value="Kymera Ray Gun">Kymera Ray Gun</option>
                 <option value="Own">Own</option>
@@ -165,7 +175,9 @@
                 <option value="Saucers">Saucers</option>
                 <option value="SMG">SMG</option>
                 <option value="Shotgun">Shotgun</option>
-                <option value="Storm">Storm</option>          
+                <option value="Sniper">Sniper</option>
+                <option value="Storm">Storm</option> 
+                <option value="UFO">UFO</option>  
               </select>
             </li>
           </div>
@@ -201,6 +213,38 @@
                 <option value="Lever Action">Lever Action</option>
                 <option value="Pump">Pump</option>
                 <option value="Tac">Tac</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div9">
+            <li>
+              <label for="typeofsmg">Type of SMG</label>
+              <select id="typeofsmg" name="typeofsmg">
+                <option value="NT">N/A</option>
+                <option value="SMG">SMG</option>
+                <option value="Rapid-Fired">Rapid-Fired</option>
+                <option value="Silenced">Silenced</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div10">
+            <li>
+              <label for="typeofar">Type of AR</label>
+              <select id="typeofar" name="typeofar">
+                <option value="NT">N/A</option>
+                <option value="AR">AR</option>
+                <option value="Heavy">Heavy</option>
+                <option value="Burst">Burst</option>
+              </select>
+            </li>
+          </div>
+          <div class="form-div11">
+            <li>
+              <label for="typeofpistol">Type of Pistol</label>
+              <select id="typeofpistol" name="typeofpistol">
+                <option value="NT">N/A</option>
+                <option value="Pistol">Pistol</option>
+                <option value="Hand Canon">Hand Canon</option>
               </select>
             </li>
           </div>
