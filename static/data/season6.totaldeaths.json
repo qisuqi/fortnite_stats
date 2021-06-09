@@ -5,7 +5,8 @@
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
 "transform": [
-    {"filter": {"timeUnit": "monthdate", "field": "Date", "range": [{"month": "Mar", "date": 16}, {"month": "Jun", "date": 7}] }}
+    {"filter": {"timeUnit": "monthdate", "field": "Date", "range": [{"month": "Mar", "date": 16}, {"month": "Jun", "date": 7}] }},
+    {"filter": "datum['Weapon Name'] != 'NW'"}
 ],
 "mark": "bar",
 "params": [
@@ -16,7 +17,7 @@
     }
   ],
 "encoding": {
-    "x": {"field": "Weapons", "type": "ordinal"},
+    "x": {"field": "Weapons", "type": "ordinal", "sort": "-y"},
     "y": {"aggregate": "count", "title": "Deaths"},
     "tooltip": [
       {"aggregate": "count", "title": "Number of Deaths"},
