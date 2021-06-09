@@ -3,6 +3,15 @@
   "description": "A simple bar chart with embedded data.",
   "title": "Total Deaths Count",
   "data": {"url": "/.netlify/functions/death-data"},
+  "transform": [
+    {
+      "filter": {
+        "timeUnit": "monthdate",
+        "field": "Date",
+        "range": [{"month": "Mar", "date": 16}, {"month": "Jun", "date": 7}]
+      }
+    }
+  ],
   "hconcat": [
     {
       "width": 250,
@@ -15,15 +24,7 @@
           "bind": "legend"
         }
       ],
-      "transform": [{"filter": "datum['Win'] != 'NA'"},
-                    {
-                      "filter": {
-                        "timeUnit": "monthdate",
-                        "field": "Date",
-                        "range": [{"month": "Jun", "date": 8}, {"month": "Dec", "date": 30}]
-                      }
-                    }
-                   ],
+      "transform": [{"filter": "datum['Win'] != 'NA'"}],
       "encoding": {
         "y": {
           "aggregate": "count",
