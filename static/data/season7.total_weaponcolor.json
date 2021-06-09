@@ -4,9 +4,6 @@
 "title": "Total Deaths for all Players",
 "width": 1000, "height": 700,
 "data": {"url": "/.netlify/functions/death-data"},
-"transform": [
-    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}
-],
 "mark": {"type": "arc", "tooltip": {"content": "encoding"}},
 "params": [
   {
@@ -15,7 +12,9 @@
     "bind": "legend"
     }
     ],
-"transform": [{"filter": "datum['Weapon Color'] != 'NC'"}],
+"transform": [
+    {"filter": "datum['Weapon Color'] != 'NC'"},
+    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}],
 "encoding": {
   "theta": {"aggregate": "count", "title": "No. of Deaths"},
   "color": {
