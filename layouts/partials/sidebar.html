@@ -1,16 +1,9 @@
 <nav>
-    <ul class="player-menu">
-      {{ $currentPage := . }}
-      <li class="menu-heading">
-        <h3>Seasons</h3>
-      </li>
-      <li>
-        <a href="https://www.google.com/">Season 6</a>
-        <a href="https://www.amazon.co.uk/">Season 7</a>
-      </li>
+    <ul class="player-menu">      
       <li class="menu-heading">
         <h3>Players</h3>
       </li>
+      {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
       <li>
         <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
