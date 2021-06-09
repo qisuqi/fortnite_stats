@@ -45,7 +45,9 @@
           "bind": "legend"
         }
       ],
-      "transform": [{"filter": "datum['Win'] != 'NA'"}],
+      "transform": [
+        {"filter": "datum['Win'] != 'NA'"},
+        {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}],
       "encoding": {
         "y": {
           "aggregate": "count",
