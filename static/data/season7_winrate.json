@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "Total Deaths Count",
+  "data": {"url": "/.netlify/functions/death-data"},
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Name"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Win'] != 'NA'"},
+                    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Win %",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+          },
+        "x": {"field": "Name", "type": "nominal"},
+        "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+            {"aggregate": "count", "title": "No. of Deaths"},
+            {"field": "Win"}
+          ],
+          "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+        },
+        "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+    },
+    {
+      "width": 300,
+      "height": 500,
+      "mark": "bar",
+      "params": [
+        {
+          "name": "Name",
+          "select": {"type": "point", "fields": ["Location"]},
+          "bind": "legend"
+        }
+      ],
+      "transform": [{"filter": "datum['Win'] != 'NA'"}],
+      "encoding": {
+        "y": {
+          "aggregate": "count",
+          "title": "Win %",
+          "stack": "normalize",
+          "axis": {"format": "%"}
+          },
+        "x": {"field": "Location", "type": "nominal"},
+        "color": {"field": "Win", "scale": {"scheme": "tableau20"}},
+        "tooltip": [
+            {"aggregate": "count", "title": "No. of Deaths"},
+            {"field": "Got Out"}
+          ],
+        "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+        },
+        "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+      }
+    ]
+  }
