@@ -1,0 +1,35 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+"description": "A simple bar chart with embedded data.",
+"width": {"step": 25}, "height": 700,
+"title": "Total Deaths Count",
+"data": {"url": "/.netlify/functions/death-data"},
+ "mark": "bar",
+ "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Name"]},
+      "bind": "legend"
+    }
+  ],
+ "transform": [
+    {"filter": "datum['Location'] != 'NP'"},
+    {"filter": "datum['Got Out'] != 'NA'"},
+    {"filter": {"field": "Date", "range": ["8-Jun", "30-Dec"]}}
+  ],
+ "encoding": {
+    "column": {"field": "Location", "type": "ordinal", "spacing": 10},
+    "y": {
+      "aggregate": "count",
+      "title": "Total Deaths"
+    },
+    "x": {"field": "Got Out", "type": "nominal"},
+    "color": {"field": "Name", "scale": {"scheme": "tableau20"}},
+    "tooltip": [
+      {"aggregate": "count", "title": "Number of Deaths"},
+      {"field": "Name", "type": "ordinal"}
+      ],
+    "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+  },
+ "config": {"view": {"stroke": "transparent"}, "axis": {"domainWidth": 1}}
+}
