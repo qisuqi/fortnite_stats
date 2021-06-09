@@ -16,7 +16,8 @@
         }
       ],
       "transform": [{"filter": "datum['Win'] != 'NA'"},
-                    {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}],
+                    {"filter": {"timeUnit": "monthdate", "field": "Date", "range": [{"month": "Mar", "date": 16}, {"month": "Jun", "date": 7}] }}
+                   ],
       "encoding": {
         "y": {
           "aggregate": "count",
