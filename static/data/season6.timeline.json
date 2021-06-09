@@ -6,7 +6,7 @@
 "data": {"url": "/.netlify/functions/death-data"},
 "transform": [
     {"filter": "datum['Weapon Name'] != 'NW'"},
-    {"filter": {"field": "Date", "range": ["16-Mar", "7-Jun"]}}],
+    {"filter": {"timeUnit": "monthdate", "field": "Date", "range": [{"month": "Mar", "date": 18}, {"month": "Jun", "date": 7}] }}],
   "mark": "bar",
   "params": [
     {
@@ -19,7 +19,7 @@
     "x": {
       "field": "Date",
       "type": "ordinal",
-      "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "timeUnit": "monthdate",
       "axis": {"grid": false}
     },
     "y": {"aggregate": "count", "title": "Deaths"},
