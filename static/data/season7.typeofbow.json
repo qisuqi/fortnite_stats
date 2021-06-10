@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple bar chart with embedded data.",
+  "title": "Total Deaths for all Players",
+  "width": 1000,
+  "height": 700,
+  "data": {"url": "/.netlify/functions/death-data"},
+  "transform": [
+    {"filter": "datum['Type of Shotgun'] != 'NT'"},
+    {
+      "filter": {
+        "timeUnit": "monthdate",
+        "field": "Date",
+        "range": [{"month": "Jun", "date": 8}, {"month": "Dec", "date": 30}]
+      }
+    }
+               ],
+  "mark": {"type":"arc", "tooltip": {"content": "encoding"}},
+  "params": [
+    {
+      "name": "Name",
+      "select": {"type": "point", "fields": ["Type of Shotgun"]},
+      "bind": "legend"
+    }
+    ],
+   "encoding": {
+    "theta": {"aggregate": "count", "title": "No. of Deaths"},
+    "color": {
+      "field": "Type of Shotgun",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
+   "opacity": {"condition": {"param": "Name", "value": 1}, "value": 0.2}
+    },
+   "view": {"stroke": null}
+  }
