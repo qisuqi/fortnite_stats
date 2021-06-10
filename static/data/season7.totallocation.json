@@ -1,7 +1,7 @@
 {
 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
 "description": "A simple bar chart with embedded data.",
-"width": {"step": 25}, "height": 700,
+"width": {"step": 30}, "height": 700,
 "title": "Total Deaths Count",
 "data": {"url": "/.netlify/functions/death-data"},
  "mark": "bar",
